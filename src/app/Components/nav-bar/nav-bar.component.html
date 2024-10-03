@@ -1,1 +1,33 @@
-<p>nav-bar works!</p>
+<nav>
+  <div>
+    <img [src]="images.logo" alt="logo" />
+  </div>
+  <div>
+    <ul>
+      @for (lin of links; track $index) {
+        <li>
+          <a routerLink={{lin.link}} routerLinkActive="router-link-active" >{{lin.name}}</a>
+        </li>
+      }
+    </ul>
+    <div>
+      <img [src]="icons.call" alt="phone number" />
+      <p>01902912899</p>
+    </div>
+  </div>
+  <div>
+  <div *ngIf="menu; else elseTemplate">
+    <img [src]="icons.cancel" alt="cancel" (click)="closemenu()" />
+  </div>
+  <ng-template #elseTemplate>
+    <img [src]="icons.stacks" alt="menu" (click)="openmenu()" />
+  </ng-template>
+  </div>
+  <div>
+    <div>
+      <p>privacy policy</p>
+      <p>Terms and condition</p>
+    </div>
+    <p>© 2023 Volomn - All</p>
+  </div>
+</nav>

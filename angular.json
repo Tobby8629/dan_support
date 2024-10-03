@@ -13,6 +13,9 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
+            "loader": {
+              ".png": "file"
+            },
             "outputPath": "dist/dan_support",
             "index": "src/index.html",
             "browser": "src/main.ts",
@@ -24,7 +27,8 @@
               {
                 "glob": "**/*",
                 "input": "public"
-              }
+              },
+              "src/assets/"
             ],
             "styles": [
               "src/styles.css"
@@ -87,15 +91,21 @@
               {
                 "glob": "**/*",
                 "input": "public"
-              }
+              },
+              "src/assets/images/image",
+              "src/assets/Icons/Icon"
             ],
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+            ]
           }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "2be2094f-5abb-491b-8788-056e0fddc7e0"
   }
 }
